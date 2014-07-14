@@ -1,6 +1,8 @@
 #!/bin/sh
 
-CURDDIR=$(pwd)
+echo "Git branch per directory:"
+echo "========================="
+echo
 
 for DIR in * #$(find . -type d)
 do
@@ -16,22 +18,7 @@ do
 
     echo "Current Branch is: ${BRANCH}"
 
-    if [ "${BRANCH}" = "master" ];
-    then
-    	
-	echo "Will pull from origin"
-
-	cd  ${DIR} && git pull origin master 
-	cd  ${CURDDIR}
-
-	# git ${GIT_PARAMS} pull origin master
-
-    else
-
-        echo "Skipping: Not master branch"
-   
-    fi
-
+    
     echo
 
   fi
